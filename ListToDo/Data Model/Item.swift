@@ -7,9 +7,9 @@
 //
 
 import Foundation
+import CoreData
 
-class Item: Codable {
-    var title: String = ""
-    var done: Bool = false
+// class Item: {
     
-}
+    
+// }
