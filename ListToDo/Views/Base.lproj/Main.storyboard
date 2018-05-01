@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--List To Do-->
+        <!--Items-->
         <scene sceneID="Bg4-9f-c3H">
             <objects>
                 <tableViewController id="2sV-9g-5mb" customClass="TodoListViewController" customModule="ListToDo" customModuleProvider="target" sceneMemberID="viewController">
@@ -40,7 +40,7 @@
                             <outlet property="delegate" destination="2sV-9g-5mb" id="mGD-sw-nje"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="List To Do" id="UVd-wj-hjj">
+                    <navigationItem key="navigationItem" title="Items" id="UVd-wj-hjj">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="W9v-dF-yrx">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
@@ -75,16 +75,16 @@
             </objects>
             <point key="canvasLocation" x="-110" y="133"/>
         </scene>
-        <!--Table View Controller-->
+        <!--ListToDo-->
         <scene sceneID="kq0-T1-Dcl">
             <objects>
-                <tableViewController id="wQa-ho-fCC" sceneMemberID="viewController">
+                <tableViewController id="wQa-ho-fCC" customClass="CategoryViewController" customModule="ListToDo" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="8ew-NF-c7w">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="EQV-6k-rJS">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CategoryCell" id="EQV-6k-rJS">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EQV-6k-rJS" id="da6-Gz-vcO">
@@ -98,7 +98,14 @@
                             <outlet property="delegate" destination="wQa-ho-fCC" id="NwW-gk-8Bj"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="FEh-ct-smM"/>
+                    <navigationItem key="navigationItem" title="ListToDo" id="FEh-ct-smM">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Wci-ad-BmE">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="addButtonPressed:" destination="wQa-ho-fCC" id="qn8-Gi-C5c"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="2sV-9g-5mb" kind="show" identifier="goToItems" id="CJG-2Z-Vxq"/>
                     </connections>
