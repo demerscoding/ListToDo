@@ -2,14 +2,16 @@
 //  Item.swift
 //  ListToDo
 //
-//  Created by Mark De Mers on 4/18/18.
+//  Created by Mark De Mers on 5/2/18.
 //  Copyright © 2018 Mark De Mers. All rights reserved.
 //
 
 import Foundation
-import CoreData
+import RealmSwift
 
-// class Item: {
-    
-    
-// }
+class Item: Object {
+    @objc dynamic var title: String = ""
+    @objc dynamic var done: Bool = false
+    @objc dynamic var dateCreated: Date?
+    var parentCategory = LinkingObjects(fromType: Category.self, property: "items")
+}
