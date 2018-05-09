@@ -10,6 +10,7 @@
 		0549E89C209267DC00906134 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0549E89B209267DC00906134 /* CategoryViewController.swift */; };
 		059CD6AB209A5B15006812C8 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059CD6AA209A5B15006812C8 /* Item.swift */; };
 		059CD6AD209A5B80006812C8 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059CD6AC209A5B80006812C8 /* Category.swift */; };
+		05BD7BB220A202A600069483 /* SwipeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BD7BB120A202A600069483 /* SwipeTableViewController.swift */; };
 		05E3918C207FDF3B00188B93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E3918B207FDF3B00188B93 /* AppDelegate.swift */; };
 		05E3918E207FDF3B00188B93 /* TodoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E3918D207FDF3B00188B93 /* TodoListViewController.swift */; };
 		05E39191207FDF3B00188B93 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05E3918F207FDF3B00188B93 /* Main.storyboard */; };
@@ -22,6 +23,7 @@
 		0549E89B209267DC00906134 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		059CD6AA209A5B15006812C8 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		059CD6AC209A5B80006812C8 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		05BD7BB120A202A600069483 /* SwipeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeTableViewController.swift; sourceTree = "<group>"; };
 		05E39188207FDF3B00188B93 /* ListToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ListToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05E3918B207FDF3B00188B93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05E3918D207FDF3B00188B93 /* TodoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 			children = (
 				0549E89B209267DC00906134 /* CategoryViewController.swift */,
 				05E3918D207FDF3B00188B93 /* TodoListViewController.swift */,
+				05BD7BB120A202A600069483 /* SwipeTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -224,13 +227,17 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ListToDo/Pods-ListToDo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwipeCellKit/SwipeCellKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwipeCellKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -263,6 +270,7 @@
 				0549E89C209267DC00906134 /* CategoryViewController.swift in Sources */,
 				05E3918E207FDF3B00188B93 /* TodoListViewController.swift in Sources */,
 				05E3918C207FDF3B00188B93 /* AppDelegate.swift in Sources */,
+				05BD7BB220A202A600069483 /* SwipeTableViewController.swift in Sources */,
 				059CD6AD209A5B80006812C8 /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -411,10 +419,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SWH78A945N;
 				INFOPLIST_FILE = ListToDo/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.demerscoding.ListToDo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -430,10 +435,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SWH78A945N;
 				INFOPLIST_FILE = ListToDo/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.demerscoding.ListToDo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
