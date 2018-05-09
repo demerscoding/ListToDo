@@ -45,9 +45,9 @@ import ChameleonFramework
             
             cell.textLabel?.text = item.title
             
-            if let color = FlatSkyBlue().darken(byPercentage:CGFloat(indexPath.row / todoItems!.count)) {
+            if let color = UIColor(hexString: selectedCategory!.color)?.darken(byPercentage: CGFloat(indexPath.row) / CGFloat(todoItems!.count)) {
                 cell.backgroundColor = color
-                
+                cell.textLabel?.textColor = ContrastColorOf(color, returnFlat: true)
             }
                 
             
