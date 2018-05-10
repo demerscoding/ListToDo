@@ -12,7 +12,8 @@ import ChameleonFramework
 
     class TodoListViewController: SwipeTableViewController {
 
-    var todoItems: Results<Item>?
+        @IBOutlet weak var searchBar: UISearchBar!
+        var todoItems: Results<Item>?
     let realm = try! Realm()
 
 
@@ -22,15 +23,42 @@ import ChameleonFramework
         }
     }
 
-
-
     override func viewDidLoad() {
         super.viewDidLoad()
-       
-       print (FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
         
         tableView.separatorStyle = .none
+        
     }
+        override func viewWillAppear(_ animated: Bool) {
+            if let colorHex = selectedCategory?.color {
+                
+                title = selectedCategory!.name
+                
+                guard let navBar = navigationController?.navigationBar else {fatalError("Navigation controller does not exist.")}
+              
+                if let navBarColor = UIColor(hexString: colorHex) {
+                    
+                    navBar.barTintColor = navBarColor
+                    
+                    navBar.tintColor = ContrastColorOf(navBarColor, returnFlat: true)
+                    
+                    navBar.largeTitleTextAttributes = [NSAttributedStringKey.foregroundColor : ContrastColorOf(navBarColor, returnFlat: true)]
+                    
+                    searchBar.barTintColor = navBarColor
+                    
+                }
+                
+            }
+            
+        }
+        
+        override func viewWillDisappear(_ animated: Bool) {
+            guard let originalColor = UIColor(hexString: "1D9BF6")
+                else {fatalError()}
+            navigationController?.navigationBar.barTintColor = originalColor
+            navigationController?.navigationBar.tintColor = FlatWhite()
+            navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedStringKey.foregroundColor: FlatWhite()]
+        }
 
     // MARK - Tableview Datasource Methods
 
